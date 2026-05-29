@@ -1,0 +1,614 @@
+*{
+box-sizing:border-box;
+font-family:'Segoe UI',Arial;
+}
+
+
+body{
+
+margin:0;
+
+background:#fbfbff;
+
+color:#111633;
+
+}
+
+
+/* PAGE */
+
+
+.page{
+
+max-width:1500px;
+
+margin:auto;
+
+padding:30px 70px;
+
+}
+
+
+
+/* NAVBAR */
+
+
+nav{
+
+display:flex;
+
+justify-content:space-between;
+
+align-items:center;
+
+}
+
+
+.brand{
+
+display:flex;
+
+align-items:center;
+
+gap:15px;
+
+}
+
+
+
+.logo{
+
+width:55px;
+
+height:55px;
+
+border-radius:50%;
+
+background:
+
+conic-gradient(
+#6b5cff 75%,
+transparent 0
+);
+
+}
+
+
+
+.brand h1{
+
+font-size:34px;
+
+font-weight:800;
+
+color:#6b5cff;
+
+}
+
+
+
+button{
+
+background:white;
+
+border:1px solid #6b5cff;
+
+color:#6b5cff;
+
+padding:13px 30px;
+
+border-radius:18px;
+
+font-size:18px;
+
+}
+
+
+
+
+/* TITLE */
+
+
+.title{
+
+text-align:center;
+
+margin:50px 0;
+
+}
+
+
+
+.title h1{
+
+font-size:45px;
+
+letter-spacing:5px;
+
+color:#111633;
+
+}
+
+
+.title p{
+
+font-size:20px;
+
+color:#4d5570;
+
+}
+
+
+
+
+
+/* TOP CARD */
+
+
+.reward{
+
+background:
+
+linear-gradient(
+135deg,
+#f2f0ff,
+#ffffff
+);
+
+
+padding:40px;
+
+border-radius:30px;
+
+text-align:center;
+
+
+box-shadow:
+
+0 20px 50px #e9e6ff;
+
+}
+
+
+
+.reward h3{
+
+color:#5f52ff;
+
+}
+
+
+
+.reward h1{
+
+font-size:70px;
+
+color:#6b5cff;
+
+}
+
+
+
+.reward span{
+
+font-size:25px;
+
+}
+
+
+
+
+.smallcards{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:30px;
+
+}
+
+
+
+.smallcards div{
+
+background:white;
+
+padding:25px;
+
+border-radius:22px;
+
+}
+
+
+
+.smallcards h2{
+
+color:#6b5cff;
+
+}
+
+
+
+
+/* CONTROL */
+
+
+.control{
+
+margin-top:35px;
+
+background:white;
+
+padding:35px;
+
+border-radius:30px;
+
+
+box-shadow:
+
+0 25px 60px #e8e8ff;
+
+}
+
+
+
+label{
+
+display:block;
+
+text-align:center;
+
+font-weight:bold;
+
+color:#111633;
+
+margin-bottom:10px;
+
+}
+
+
+
+
+
+/* AMOUNT BOX */
+
+
+.amount{
+
+display:flex;
+
+align-items:center;
+
+gap:20px;
+
+
+border:
+
+1px solid #ddd;
+
+
+padding:15px 25px;
+
+border-radius:18px;
+
+}
+
+
+
+.amount span{
+
+color:#6b5cff;
+
+font-weight:bold;
+
+}
+
+
+
+.amount input{
+
+
+background:white !important;
+
+color:#111633 !important;
+
+border:none !important;
+
+outline:none;
+
+
+font-size:32px;
+
+font-weight:600;
+
+text-align:center;
+
+width:100%;
+
+}
+
+
+
+
+/* REMOVE NUMBER ARROWS */
+
+/* Chrome Edge Safari */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+
+-webkit-appearance:none;
+
+margin:0;
+
+}
+
+
+/* Firefox */
+
+
+input[type=number]{
+
+-moz-appearance:textfield;
+
+}
+
+
+
+
+
+
+/* LOCK AND VEST */
+
+
+.grid{
+
+display:grid;
+
+grid-template-columns:1fr 1fr;
+
+gap:25px;
+
+margin-top:30px;
+
+}
+
+
+
+.box{
+
+padding:35px;
+
+border:1px solid #eee;
+
+border-radius:25px;
+
+text-align:center;
+
+}
+
+
+
+.box h3{
+
+color:#111633;
+
+}
+
+
+
+.box h1{
+
+font-size:55px;
+
+color:#6b5cff;
+
+}
+
+
+
+.box span{
+
+font-size:22px;
+
+color:black;
+
+}
+
+
+
+input[type=range]{
+
+width:100%;
+
+accent-color:#6b5cff;
+
+}
+
+
+
+
+
+/* BOTTOM CARDS */
+
+
+.bottom{
+
+margin-top:35px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:25px;
+
+}
+
+
+
+.bottom div{
+
+padding:25px;
+
+border-radius:25px;
+
+text-align:center;
+
+}
+
+
+
+.bottom h4{
+
+font-size:18px;
+
+font-weight:700;
+
+}
+
+
+
+.bottom h2{
+
+font-size:24px;
+
+font-weight:900;
+
+}
+
+
+
+
+.purple{
+
+background:#eee9ff;
+
+}
+
+
+
+.purple h4,
+.purple h2{
+
+color:#654cff !important;
+
+}
+
+
+
+
+.green{
+
+background:#e8fff4;
+
+}
+
+
+
+.green h4,
+.green h2{
+
+color:#009966 !important;
+
+}
+
+
+
+
+.orange{
+
+background:#fff0e5;
+
+}
+
+
+
+.orange h4,
+.orange h2{
+
+color:#ff6600 !important;
+
+}
+
+
+
+
+.blue{
+
+background:#e8f2ff;
+
+}
+
+
+
+.blue h4,
+.blue h2{
+
+color:#006eff !important;
+
+}
+
+
+
+
+
+
+
+/* MOBILE RESPONSIVE */
+
+
+@media(max-width:800px){
+
+
+.page{
+
+padding:20px;
+
+}
+
+
+
+button{
+
+display:none;
+
+}
+
+
+
+.title h1{
+
+font-size:30px;
+
+}
+
+
+
+.reward h1{
+
+font-size:40px;
+
+}
+
+
+
+
+.grid,
+.smallcards,
+.bottom{
+
+grid-template-columns:1fr;
+
+}
+
+
+
+.amount input{
+
+font-size:24px;
+
+}
+
+
+}
