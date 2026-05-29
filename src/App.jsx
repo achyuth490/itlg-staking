@@ -10,7 +10,6 @@ const [lock,setLock]=useState(0);
 const [vest,setVest]=useState(0);
 
 
-
 const ratioTable={
 
 0:{0:160,12:130,24:105,36:85,48:70,60:60,72:52,84:46,96:41,108:38,120:36},
@@ -21,12 +20,11 @@ const ratioTable={
 
 3:{0:20,12:16,24:13,36:10,48:8,60:7,72:6,84:5,96:5,108:4,120:4},
 
-4:{0:10,12:8,24:6,36:5,48:4,60:3,84:2,96:2,108:2,120:2},
+4:{0:10,12:8,24:6,36:5,48:4,60:3,72:3,84:2,96:2,108:2,120:2},
 
 5:{0:5,12:4,24:3,36:2,48:2,60:1.875,72:1,84:1,96:1,108:1,120:1.125}
 
 };
-
 
 
 let ratio=ratioTable[lock][vest];
@@ -37,11 +35,11 @@ amount==="" ? 0 :
 (amount/ratio).toFixed(4);
 
 
+
 let monthly =
 amount==="" ? 0 :
 vest==0 ? total :
 (total/vest).toFixed(4);
-
 
 
 
@@ -51,31 +49,60 @@ return(
 <div className="page">
 
 
-<header>
+
+<nav>
+
+<div className="brand">
 
 <div className="logo"></div>
 
-<h2>
+<h1>
 InterLink
-</h2>
+</h1>
+
+</div>
 
 
-</header>
+<button>
+ⓘ Learn More
+</button>
+
+
+</nav>
 
 
 
 
 
-<div className="card">
+<section className="title">
 
+
+<h1>
+ITLG Staking Calculator
+</h1>
+
+
+<p>
+Stake your ITLG and calculate your future ITL allocation
+</p>
+
+
+</section>
+
+
+
+
+
+
+<div className="reward">
 
 
 <h3>
-TOTAL ITL RECEIVE
+TOTAL ITL YOU WILL RECEIVE
 </h3>
 
 
-<h1 className="total">
+<h1>
 
 {total}
 
@@ -87,35 +114,34 @@ TOTAL ITL RECEIVE
 
 
 
-<div className="inputBox">
+<div className="smallcards">
 
 
-<input
+<div>
 
-type="text"
+<h2>{ratio}</h2>
 
-inputMode="decimal"
+<p>Conversion Ratio</p>
 
-placeholder="Enter ITLG"
+<small>ITLG = 1 ITL</small>
 
-value={amount}
-
-
-onChange={(e)=>{
+</div>
 
 
-let v=e.target.value;
 
 
-if(/^\d*\.?\d*$/.test(v))
+<div>
 
-setAmount(v);
+<h2>{monthly}</h2>
+
+<p>Monthly Release</p>
+
+<small>ITL per month</small>
+
+</div>
 
 
-}}
-
-
-/>
+</div>
 
 
 </div>
@@ -126,23 +152,99 @@ setAmount(v);
 
 
 
-<div className="selects">
+<div className="control">
 
 
-<div>
 
 <label>
-Lock
+AMOUNT OF ITLG TO STAKE
 </label>
 
 
+<div className="amount">
+
+
+<span>
+◉ ITLG
+</span>
+
+
+
+<input
+
+type="text"
+
+inputMode="decimal"
+
+placeholder="Enter ITLG amount"
+
+value={amount}
+
+onChange={(e)=>{
+
+let value=e.target.value;
+
+if(/^\d*\.?\d*$/.test(value)){
+
+setAmount(value);
+
+}
+
+}}
+
+/>
+
+
+
+<span>
+ITLG
+</span>
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<div className="grid">
+
+
+
+
+
+<div className="box">
+
+
+<h3>
+🔒 LOCK PERIOD
+</h3>
+
+
+<h1>
+
+{lock}
+
+<span> Years</span>
+
+</h1>
+
+
+
 <select
+
+className="drop"
 
 value={lock}
 
 onChange={(e)=>setLock(e.target.value)}
 
 >
+
 
 <option value="0">0 Years</option>
 <option value="1">1 Year</option>
@@ -163,16 +265,29 @@ onChange={(e)=>setLock(e.target.value)}
 
 
 
-<div>
+<div className="box">
 
 
-<label>
-Vesting
-</label>
+
+<h3>
+📅 VESTING PERIOD
+</h3>
+
+
+<h1>
+
+{vest}
+
+<span> Months</span>
+
+</h1>
+
 
 
 
 <select
+
+className="drop"
 
 value={vest}
 
@@ -200,7 +315,6 @@ onChange={(e)=>setVest(e.target.value)}
 </div>
 
 
-
 </div>
 
 
@@ -209,24 +323,38 @@ onChange={(e)=>setVest(e.target.value)}
 
 
 
+<div className="bottom">
 
-<div className="results">
 
+<div className="purple">
 
-<div>
+<h4>Payout Starts</h4>
 
-<p>Ratio</p>
-
-<h2>{ratio}</h2>
+<h2>
+After {lock} Years
+</h2>
 
 </div>
 
 
 
 
-<div>
 
-<p>Monthly</p>
+<div className="green">
+
+<h4>Total ITL</h4>
+
+<h2>{total}</h2>
+
+</div>
+
+
+
+
+
+<div className="orange">
+
+<h4>Monthly Release</h4>
 
 <h2>{monthly}</h2>
 
@@ -236,23 +364,15 @@ onChange={(e)=>setVest(e.target.value)}
 
 
 
-<div>
+<div className="blue">
 
-<p>Unlock</p>
+<h4>Vesting Duration</h4>
 
-<h2>{lock}Y</h2>
+<h2>{vest} Months</h2>
 
 </div>
 
 
-
-
-
-<div>
-
-<p>Vest</p>
-
-<h2>{vest}M</h2>
 
 </div>
 
@@ -263,16 +383,7 @@ onChange={(e)=>setVest(e.target.value)}
 
 
 
-
-
-
 </div>
-
-
-
-
-</div>
-
 
 )
 
